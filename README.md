@@ -18,20 +18,20 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 
 To use the dirfinder Tool, simply compile the source code and run the resulting binary with the following command:
 
-./dirfinder [url] -w wordlist.txt
+    ./dirfinder [url] -w wordlist.txt
 
 The url argument is the website you want to search for directories.
 ### Options
 
 
--w specify the wordlist (optional or it will use the default one)
+    -w specify the wordlist (optional or it will use the default one)
 
 ### Examples
 
 Search for all directories on the website https://www.example.com:
 
 
-./directory_finder https://www.example.com
+    ./dirfinder https://www.example.com
 
 
 ### Conclusion
