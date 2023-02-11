@@ -5,12 +5,13 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 ### Features
 
     Search for directories on a website.
-    specify custom wordlist.
+    Specify custom wordlist.
     Fast performance due to its implementation in C++.
+    Follow redirect
 
 ### Requirements
 
-    A C++ compiler, such as GCC or Clang.
+    A C++ compiler, such as G++.
     A computer running a modern version of Windows, macOS, or Linux.
     A working internet connection.
 
