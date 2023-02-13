@@ -11,7 +11,7 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 
 ### Requirements
 
-    A C++ compiler, such as G++.
+    A C++ compiler, such as G++ or use the executable version.
     A computer running a modern version of Windows, macOS, or Linux.
     A working internet connection.
 
@@ -19,20 +19,21 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 
 To use the dirfinder Tool, simply compile the source code and run the resulting binary with the following command:
 
-    ./dirfinder [url] -w wordlist.txt
+    ./dirfinder -u/--url [url] -w/--wordlist [wordlist.txt]
 
 The url argument is the website you want to search for directories.
 ### Options
 
-
-    -w specify the wordlist (optional or it will use the default one)
+    --max-conn specify the max connections for libcurl (optional)
+    -u or --url specify the url     (required)
+    -w or --wordlist specify the wordlist   (required)
 
 ### Examples
 
-Search for all directories on the website https://www.example.com:
+Search for directories on the website https://www.example.com:
 
 
-    ./dirfinder https://www.example.com
+    ./dirfinder -u https://www.example.com -w wordlist.txt
 
 
 ### Conclusion
