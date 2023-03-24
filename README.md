@@ -7,6 +7,7 @@ This is a fast and simple command-line tool written in C++ that allows you to se
     Search for directories on a website.
     Specify custom wordlist.
     Fast performance due to its implementation in C++.
+    Find directory from robots.txt file.
 
 ### Requirements
 
