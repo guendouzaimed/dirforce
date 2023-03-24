@@ -42,4 +42,4 @@ Search for directories on the website https://www.example.com:
 
 ### Conclusion
 
-This Website Directory Brute-forcing Tool provides a quick and efficient way to search for directories on a website. With its fast performance due to its implementation in C++, you can quickly and easily locate the directories you need. Its simple command-line interface makes it a convenient solution for reconnaissance you need in no time.
+This Website Directory Discovery Tool provides a quick and efficient way to search for directories on a website. With its fast performance due to its implementation in C++, you can quickly and easily locate the directories you need. Its simple command-line interface makes it a convenient solution for reconnaissance you need in no time.
