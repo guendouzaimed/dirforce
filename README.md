@@ -13,11 +13,16 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 
     A computer running a modern version of Windows, macOS, or Linux.
     A working internet connection.
+    
+### Installation
+
+    git clone https://github.com/guendouzaimed/dirforce.git
 
 ### Usage
 
 To use the dirforce Tool, simply compile the source code and run the resulting binary with the following command:
-
+    
+    chmod +x dirforce
     ./dirforce -u/--url [url] -w/--wordlist [wordlist.txt]
 
 The url argument is the website you want to search for directories.
