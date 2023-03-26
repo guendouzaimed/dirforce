@@ -110,23 +110,25 @@ int request()
                 return -1;
             }
      
-            char buf[4096];
+            char buf[80000];
             int len;
             string response;
-            if ((len = SSL_read(ssl, buf, sizeof(buf))) > 0) {
-                response.append(buf);
-                string status = response.substr(response.find("HTTP/") + 9, 3);
-                if (stoi(status) != 404) {
-                    int http_code = stoi(status);
-                    string color, color2;
-                    if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
-                    else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
-                    else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
-                    else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
-                    else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
-                    string output = color + status + "   " + color2 + path + "\n";
-                    cout << output;
-                }
+            while ((len = SSL_read(ssl, buf, sizeof(buf))) > 0) {
+                response.append(buf, len);
+                if (response.find("\r\n\r\n") != string::npos) break;
+
+            }
+            string status = response.substr(response.find("HTTP/") + 9, 3);
+            if (stoi(status) != 404) {
+                int http_code = stoi(status);
+                string color, color2;
+                if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
+                else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
+                else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
+                else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
+                else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
+                string output = color + status + "   " + color2 + path + "\n";
+                cout << output;
             }
             
         }
@@ -152,23 +154,22 @@ int request()
             std::string response1;
             char buf1[4096];
             int num_bytes1;
-            if ((num_bytes1 = recv(sock, buf1, sizeof(buf1), 0)) > 0) {
-                response1.append(buf1);
-
-                string status = response1.substr(response1.find("HTTP/") + 9, 3);
-                if (stoi(status) != 404) {
-                    int http_code = stoi(status);
-                    string color, color2;
-                    if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
-                    else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
-                    else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
-                    else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
-                    else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
-                    string output = color + status + "   " + color2 + path + "\n";
-                    cout << output;
-                }
-            } else cout << "error " << strerror(errno);
-            
+            while ((num_bytes1 = recv(sock, buf1, sizeof(buf1), 0)) > 0) {
+                response1.append(buf1, num_bytes1);
+                if (response1.find("\r\n\r\n") != string::npos) break;
+            }
+            string status = response1.substr(response1.find("HTTP/") + 9, 3);
+            if (stoi(status) != 404) {
+                int http_code = stoi(status);
+                string color, color2;
+                if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
+                else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
+                else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
+                else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
+                else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
+                string output = color + status + "   " + color2 + path + "\n";
+                cout << output;
+            }
         }
     }
     close(sock);
