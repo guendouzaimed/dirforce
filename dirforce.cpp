@@ -131,6 +131,9 @@ int request()
                     string output = color + status + "   " + color2 + path + "\n";
                     cout << output;
                 }
+            } else {//if the server close the connection create new socket connection
+                request();
+                break;
             }
         }
     } else {
@@ -172,6 +175,9 @@ int request()
                     string output = color + status + "   " + color2 + path + "\n";
                     cout << output;
                 }
+            } else { //if the server close the connection create new socket connection
+                request();
+                break;
             }
         }
     }
