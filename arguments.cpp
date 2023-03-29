@@ -2,10 +2,10 @@
 #include <cstring>
 using namespace std;
 
-int arguments(int argc, char* argv[], string *url, string *wordlist, int *threadCounter, int *sslOption, string *address)
+int arguments(int argc, char* argv[], string *url, string *wordlist, int *threadCounter, int *sslOption, string *address, string *http_method, int *requestOption, string *readrequest, string *suffixe, string *preffixe)
 {
-    string urlV = "", wordlistV = "", addressV = "";
-    int sslOptionV = 0, threadCounterV = 30;
+    string urlV = "", wordlistV = "", addressV = "", http_methodV = "HEAD", readrequestV = "", suffixeV = "", preffixeV = "";
+    int sslOptionV = 0, threadCounterV = 30, requestOptionV = 0;
     
     //std::cout << "Number of arguments: " << argc << std::endl;
 
@@ -39,6 +39,47 @@ int arguments(int argc, char* argv[], string *url, string *wordlist, int *thread
             }
         }
 
+        if (strncmp(argv[i], "-m", 2) == 0 || strncmp(argv[i], "--method", 8) == 0)
+        {
+            if (i + 1 < argc)
+            {
+                http_methodV = argv[i + 1];
+                i++;
+            }
+        }
+
+        if (strncmp(argv[i], "-r", 2) == 0 || strncmp(argv[i], "--request", 9) == 0)
+        {
+            if (i + 1 < argc)
+            {
+                requestOptionV = 1;
+                string line;
+                ifstream requestfile(argv[i+1]);
+                while (getline(requestfile, line)) {
+                    readrequestV += line + "\n";
+                }
+                readrequestV += "\n";
+                i++;
+            }
+        }
+
+        if (strncmp(argv[i], "-s", 2) == 0 || strncmp(argv[i], "--suffixe", 9) == 0)
+        {
+            if (i + 1 < argc)
+            {
+                suffixeV = argv[i + 1];
+                i++;
+            }
+        }
+
+        if (strncmp(argv[i], "-p", 2) == 0 || strncmp(argv[i], "--preffixe", 10) == 0)
+        {
+            if (i + 1 < argc)
+            {
+                preffixeV = argv[i + 1];
+                i++;
+            }
+        }
 
     }
     if (urlV.find("https") == string::npos) {
@@ -79,5 +120,10 @@ int arguments(int argc, char* argv[], string *url, string *wordlist, int *thread
     *threadCounter = threadCounterV;
     *sslOption = sslOptionV;
     *wordlist = wordlistV;
+    *http_method = http_methodV;
+    *requestOption = requestOptionV;
+    *readrequest = readrequestV;
+    *suffixe = suffixeV;
+    *preffixe = preffixeV;
     return 0;
 }
