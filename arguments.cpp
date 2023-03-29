@@ -1,6 +1,22 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
+string version = "v0.2";
+void showhelp() {
+    cout << "Version: " << version << "\n"
+         << "Usage: dirforce -u/--url [url] -w/--wordlist [wordlist.txt]\n\n"
+         << "\033[1;37mOptions: \033[0;37m\n"
+         << "   -u or --url specify the url             (required)\n"
+         << "   -w or --wordlist specify the wordlist   (required)\n"
+         << "   -t or --thread specify how many thread to create\n"
+         << "   -m or --method spedify the http method\n"
+         << "   -r or --request specify to import the request from file\n"
+         << "   -s or --suffixe to add a string in the begining of every path in the wordlist\n"
+         << "   -p or --preffixe to add a string in the end of every path in the wordlist\n"
+         << "\033[1;37mDocumentation:\033[0;37m https://github.com/guendouzaimed/dirforce\n"
+         << "Please report any bug or issue in the tool.";
+    exit(0);
+}
 
 int arguments(int argc, char* argv[], string *url, string *wordlist, int *threadCounter, int *sslOption, string *address, string *http_method, int *requestOption, string *readrequest, string *suffixe, string *preffixe)
 {
@@ -79,6 +95,11 @@ int arguments(int argc, char* argv[], string *url, string *wordlist, int *thread
                 preffixeV = argv[i + 1];
                 i++;
             }
+        }
+
+        if (strncmp(argv[i], "-h", 2) == 0 || strncmp(argv[i], "--help", 6) == 0)
+        {
+            showhelp();
         }
 
     }
