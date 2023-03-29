@@ -17,13 +17,17 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 ### Installation
 
     git clone https://github.com/guendouzaimed/dirforce.git
+    
+change working directory to dirforce
 
+    cd dirforce
+    bash setup.sh
+    
 ### Usage
 
 To use the dirforce Tool, simply compile the source code and run the resulting binary with the following command:
     
-    chmod +x dirforce
-    ./dirforce -u/--url [url] -w/--wordlist [wordlist.txt]
+    dirforce -u/--url [url] -w/--wordlist [wordlist.txt]
 
 The url argument is the website you want to search for directories.
 ### Options
@@ -37,12 +41,12 @@ The url argument is the website you want to search for directories.
     -w or --wordlist specify the wordlist   (required)
 ### choose http method
     
-    ./dirforce -u https://www.example.com -w wordlist.txt -m METHOD
+    dirforce -u https://www.example.com -w wordlist.txt -m METHOD
     
 For example:
 
     
-    ./dirforce -u https://www.example.com -w wordlist.txt -m GET
+    dirforce -u https://www.example.com -w wordlist.txt -m GET
     
 note that the default method is HEAD which reveal only the header
 
@@ -67,20 +71,20 @@ and then you can add your custom header like this:
 to run the tool:
 
     
-    ./dirforce -u https://www.example.com/ -w wordlist.txt -r requestFile.txt
+    dirforce -u https://www.example.com/ -w wordlist.txt -r requestFile.txt
     
     
 ### add suffixe and prefixe
 for suffixe:
 
     
-    ./dirforce -u https://www.example.com/ -w wordlist.txt -s suffixe
+    dirforce -u https://www.example.com/ -w wordlist.txt -s suffixe
     
     
 for prefixe:
 
     
-    ./dirforce -u https://www.example.com/ -w wordlist.txt -p preffixe
+    dirforce -u https://www.example.com/ -w wordlist.txt -p preffixe
     
     
 ### thread
@@ -88,22 +92,22 @@ number of thread is the number of process running in the same time and each proc
 
 to specify the number of thread :
 
-    ./dirforce -u https://www.example.com/ -w wordlist.txt -t number_of_thread
+    dirforce -u https://www.example.com/ -w wordlist.txt -t number_of_thread
     
 
 ### Examples
 
 Search for directories on the website https://www.example.com:
 
-    ./dirforce -u https://www.example.com -w wordlist.txt
+    dirforce -u https://www.example.com -w wordlist.txt
     
 Search for directories on the website https://www.example.com with 100 thread:
 
-    ./dirforce -u https://www.example.com -w wordlist.txt -t 100
+    dirforce -u https://www.example.com -w wordlist.txt -t 100
     
 Search for directories on the website https://www.example.com with POST method:
     
-    ./dirforce -u https://www.example.com -w wordlist.txt -t 100
+    dirforce -u https://www.example.com -w wordlist.txt -t 100
 
 ### Compiling
 
