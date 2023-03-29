@@ -36,10 +36,51 @@ The url argument is the website you want to search for directories.
     -u or --url specify the url     (required)
     -w or --wordlist specify the wordlist   (required)
 ### choose http method
+    ```
     ./dirforce -u https://www.example.com -w wordlist.txt -m METHOD
-for example
+    ```
+For example:
+    ```
     ./dirforce -u https://www.example.com -w wordlist.txt -m GET
+    ```
 note that the default method is HEAD which reveal only the header
+
+### import request from a file
+to import request from file you need to create a file containing the request as following:
+    ```
+    HEAD PATH HTTP/1.1
+    Host: HOSTNAME
+    Connection: keep-alive
+    ```
+and then you can add your custom header like this:
+    ```
+    HEAD PATH HTTP/1.1
+    Host: HOSTNAME
+    Connection: keep-alive
+    User-Agent: Mozilla/5.0
+    ```
+to run the tool:
+    ```
+    ./dirforce -u https://www.example.com/ -w wordlist.txt -r requestFile.txt
+    ```
+    
+### add suffixe and prefixe
+for suffixe:
+    ```
+    ./dirforce -u https://www.example.com/ -w wordlist.txt -s suffixe
+    ```
+for prefixe:
+    ```
+    ./dirforce -u https://www.example.com/ -w wordlist.txt -p preffixe
+    ```
+    
+### thread
+number of thread is the number of process running in the same time and each process send multiple request to the server, so the more threads you use, the faster dirforce will run.
+
+to specify the number of thread :
+    ```
+    ./dirforce -u https://www.example.com/ -w wordlist.txt -t number_of_thread
+    ```
 
 ### Examples
 
