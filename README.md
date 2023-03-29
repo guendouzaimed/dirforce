@@ -29,16 +29,28 @@ The url argument is the website you want to search for directories.
 ### Options
 
     -t or --thread specify how many thread to create
+    -m or --method spedify the http method
+    -r or --request specify to import the request from file
+    -s or --suffixe to add a string in the begining of every path in the wordlist
+    -p or --preffixe to add a string in the end of every path in the wordlist
     -u or --url specify the url     (required)
     -w or --wordlist specify the wordlist   (required)
+### choose http method
+    ./dirforce -u https://www.example.com -w wordlist.txt -m METHOD
+for example
+    ./dirforce -u https://www.example.com -w wordlist.txt -m GET
+note that the default method is HEAD which reveal only the header
 
 ### Examples
 
 Search for directories on the website https://www.example.com:
 
-
     ./dirforce -u https://www.example.com -w wordlist.txt
 
+### Compiling
+
+follow the following steps if you want to compile the tool from source code.
+    g++ -I/usr/local/ssl/include dirforce.cpp -o dirforce -L/usr/local/ssl/lib -lssl -lcrypto -lcurl
 
 ### Conclusion
 
