@@ -25,7 +25,7 @@ change working directory to dirforce
     
 ### Usage
 
-To use the dirforce Tool, simply compile the source code and run the resulting binary with the following command:
+To use the dirforce Tool after installation you can run:
     
     dirforce -u/--url [url] -w/--wordlist [wordlist.txt]
 
