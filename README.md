@@ -96,12 +96,25 @@ to specify the number of thread :
 Search for directories on the website https://www.example.com:
 
     ./dirforce -u https://www.example.com -w wordlist.txt
+    
+Search for directories on the website https://www.example.com with 100 thread:
+
+    ./dirforce -u https://www.example.com -w wordlist.txt -t 100
+    
+Search for directories on the website https://www.example.com with POST method:
+    
+    ./dirforce -u https://www.example.com -w wordlist.txt -t 100
 
 ### Compiling
 
 follow the following steps if you want to compile the tool from source code.
+
+before you compile the source code make sure to have openssl and libcurl installed
+    
     g++ -I/usr/local/ssl/include dirforce.cpp -o dirforce -L/usr/local/ssl/lib -lssl -lcrypto -lcurl
 
 ### Conclusion
 
 This Website Directory Discovery Tool provides a quick and efficient way to search for directories on a website. With its fast performance due to its implementation in C++, you can quickly and easily locate the directories you need. Its simple command-line interface makes it a convenient solution for reconnaissance you need in no time.
+
+note: use this tool only for ethical purposes.
