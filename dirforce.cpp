@@ -109,7 +109,7 @@ int request(const struct sockaddr *dest_addr, socklen_t addrlen)
             if (wordlist.eof()) {
                 break;
             }
-            string path = address + suffixe + word + preffixe;
+            string path = address + preffixe + word + suffixe;
             string rawrequest;
             if (requestOption == 0) {
                 rawrequest = http_method + " " + path + " HTTP/1.1\nHost: " + host + "\n" + "Connection: keep-alive\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\n\n";
