@@ -35,8 +35,8 @@ The url argument is the website you want to search for directories.
     -t or --thread specify how many thread to create
     -m or --method spedify the http method
     -r or --request specify to import the request from file
-    -s or --suffixe to add a string in the begining of every path in the wordlist
-    -p or --preffixe to add a string in the end of every path in the wordlist
+    -s or --suffixe to add a string in the end of every path in the wordlist
+    -p or --preffixe to add a string in the begining of every path in the wordlist
     -u or --url specify the url     (required)
     -w or --wordlist specify the wordlist   (required)
 ### choose http method
