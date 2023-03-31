@@ -112,7 +112,7 @@ int request(const struct sockaddr *dest_addr, socklen_t addrlen)
             string path = address + preffixe + word + suffixe;
             string rawrequest;
             if (requestOption == 0) {
-                rawrequest = http_method + " " + path + " HTTP/1.1\nHost: " + host + "\n" + "Connection: keep-alive\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\n\n";
+                rawrequest = http_method + " " + path + " HTTP/1.1\r\nHost: " + host + "\r\n" + "Connection: keep-alive\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3\r\n\r\n";
             } else {
                 rawrequest = readrequest.substr(0, readrequest.find("PATH")) + path + readrequest.substr(readrequest.find("PATH") + 4);
                 rawrequest = rawrequest.substr(0, rawrequest.find("HOSTNAME")) + host + rawrequest.substr(rawrequest.find("HOSTNAME") + 8);
@@ -132,18 +132,20 @@ int request(const struct sockaddr *dest_addr, socklen_t addrlen)
 
             }
             if (response.find("HTTP/") != string::npos) {
-                string status = response.substr(response.find("HTTP/") + 9, 3);
-                if (stoi(status) != 404) {
-                    int http_code = stoi(status);
-                    string color, color2;
-                    if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
-                    else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
-                    else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
-                    else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
-                    else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
-                    string output = color + status + "   " + color2 + path + "\n";
-                    cout.flush();
-                    cout << output;
+                if (response.find("HTTP/") != string::npos) {
+                    string status = response.substr(response.find("HTTP/") + 9, 3);
+                    if (stoi(status) != 404) {
+                        int http_code = stoi(status);
+                        string color, color2;
+                        if (http_code < 200) {color = "\033[1;34m"; /* yellow */}
+                        else if (http_code < 300) {color = "\033[1;32m";color2 = "\033[0;32m"; /* green */}
+                        else if (http_code < 400) {color = "\033[1;33m";color2 = "\033[0;33m"; /* blue */}
+                        else if (http_code < 500) {color = "\033[1;35m";color2 = "\033[0;35m"; /* purple */}
+                        else if (http_code < 600) {color = "\033[1;31m";color2 = "\033[0;31m"; /* red */}
+                        string output = color + status + "   " + color2 + path + "\n";
+                        cout.flush();
+                        cout << output;
+                    }
                 }
                 progresslock.lock();
                 progress();
