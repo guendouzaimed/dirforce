@@ -11,7 +11,7 @@ This is a fast and simple command-line tool written in C++ that allows you to se
 
 ### Requirements
 
-    A computer running a modern version of Windows, macOS, or Linux.
+    A computer running Linux.
     A working internet connection.
     
 ### Installation
