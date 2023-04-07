@@ -1,4 +1,5 @@
 # **what's new in version 0.3**
+## **version 0.3  -  7/4/2023**
     Added ability to output custom header values.
     Added ability to add an extension for every word in the wordlist.
     Added ability to apply special filters to hide responses containing specific values (e.g., Content-Length: 0).
