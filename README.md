@@ -8,20 +8,6 @@
 ## Website Directory Finder Tool
 
 This is a fast and simple command-line tool written in C++ that allows you to search for directories on a website. The tool takes in a URL and outputs a list of all the directories that exist on the website. The tool's performance is optimized thanks to its implementation in C++, making it an efficient solution for locating directories on a website.
-### Features
-
-    Specifies the host (required).
-    Specifies the wordlist (required).
-    Specifies the number of threads to create.
-    Specifies the HTTP method.
-    Specifies to import the request from a file.
-    Adds a string at the beginning of every path in the wordlist.
-    Adds a string at the end of every path in the wordlist.
-    Outputs a specific header value.
-    Adds an extension after each word in the wordlist (e.g., -e php,html will send requests to word, word.php, and word.html).
-    Hides responses that contain the specified string.
-    Outputs in lite mode (complete URL, no color, no logo).
-    Disables the use of the robots.txt file.
 
 ### Requirements
 
