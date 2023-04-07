@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 using namespace std;
-string version = "v0.3";
+
 void showhelp() {
     cout << "Version: " << version << "\n"
          << "Usage: dirforce -u/--host [host] -w/--wordlist [wordlist.txt]\n\n"
