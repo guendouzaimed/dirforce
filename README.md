@@ -10,8 +10,7 @@
 This is a fast and simple command-line tool written in C++ that allows you to search for directories on a website. The tool takes in a URL and outputs a list of all the directories that exist on the website. The tool's performance is optimized thanks to its implementation in C++, making it an efficient solution for locating directories on a website.
 ### Features
 
-    Search for directories on a website.
-    Specify custom wordlist.
+    Specify custom wordlist and http method.
     Fast performance due to its implementation in C++.
     Find directory from robots.txt file.
 
@@ -38,15 +37,19 @@ To use the dirforce Tool after installation you can run:
 The url argument is the website you want to search for directories.
 ### Options
 
-    -u or --host specify the host             (required)                         
-    -w or --wordlist specify the wordlist   (required)                           
-    -t or --thread specify how many thread to create                             
-    -m or --method spedify the http method                                       
-    -r or --request specify to import the request from file                      
-    -s or --suffixe to add a string in the begining of every path in the wordlist
-    -p or --preffixe to add a string in the end of every path in the wordlist    
-    --custom-header-o output a specific header value                             
-    -e or --extension add extension after each word in the wordlist (eg: -e php,html the path of request sent are word and word.php and word.html)             -f or --filter d'ont show response that have the specified string
+    -u or -host: Specifies the host (required).
+    -w or -wordlist: Specifies the wordlist (required).
+    -t or -thread: Specifies the number of threads to create.
+    -m or -method: Specifies the HTTP method.
+    -r or -request: Specifies to import the request from a file.
+    -s or -suffixe: Adds a string at the beginning of every path in the wordlist.
+    -p or -preffixe: Adds a string at the end of every path in the wordlist.
+    --custom-header-o: Outputs a specific header value.
+    -e or -extension: Adds an extension after each word in the wordlist (e.g., -e php,html will send requests to word, word.php, and word.html).
+    -f or -filter: Hides responses that contain the specified string.
+    --lite: Outputs in lite mode (complete URL, no color, no logo).
+    --norobot: Disables the use of the robots.txt file.
+    
 ### choose http method
     
     dirforce -u https://www.example.com -w wordlist.txt -m METHOD
