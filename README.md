@@ -38,13 +38,15 @@ To use the dirforce Tool after installation you can run:
 The url argument is the website you want to search for directories.
 ### Options
 
-    -t or --thread specify how many thread to create
-    -m or --method spedify the http method
-    -r or --request specify to import the request from file
-    -s or --suffixe to add a string in the end of every path in the wordlist
-    -p or --preffixe to add a string in the begining of every path in the wordlist
-    -u or --url specify the url     (required)
-    -w or --wordlist specify the wordlist   (required)
+    -u or --host specify the host             (required)                         
+    -w or --wordlist specify the wordlist   (required)                           
+    -t or --thread specify how many thread to create                             
+    -m or --method spedify the http method                                       
+    -r or --request specify to import the request from file                      
+    -s or --suffixe to add a string in the begining of every path in the wordlist
+    -p or --preffixe to add a string in the end of every path in the wordlist    
+    --custom-header-o output a specific header value                             
+    -e or --extension add extension after each word in the wordlist (eg: -e php,html the path of request sent are word and word.php and word.html)             -f or --filter d'ont show response that have the specified string
 ### choose http method
     
     dirforce -u https://www.example.com -w wordlist.txt -m METHOD
@@ -96,10 +98,42 @@ for prefixe:
 ### thread
 number of thread is the number of process running in the same time and each process send multiple request to the server, so the more threads you use, the faster dirforce will run.
 
-to specify the number of thread :
+to specify the number of thread use -t or --thread:
 
     dirforce -u https://www.example.com/ -w wordlist.txt -t number_of_thread
+
+### output a header value
+to output a header value you can specify it with --custom-header-o , example:
+
+    dirforce -u https://www.example.com/ -w wordlist.txt --custom-header-o Content-Type
+
+### add an extension for every word in the wordlist
+you can do it with -e or --extension, example:
+
+    dirforce -u https://www.example.com/ -w wordlist.txt -e php,html,js
     
+make sure to separate the extensions with "," and do not include space
+
+### Filter
+you can filter the output from response that include a specific term like "Content-Length: 0" with -f or --filter
+
+    dirforce -u https://www.example.com/ -w wordlist.txt --filter "Content-Length: 0"
+
+### lite mode
+lite mode is an output option that:
+    
+    output complete url
+    no color
+    no logo
+
+to use lite mode use --lite example:
+
+    dirforce -u https://www.example.com/ -w wordlist.txt --lite
+
+### robots.txt file
+by default the robots.txt file is used to find path you disable this option by using --norobot
+
+        dirforce -u https://www.example.com/ -w wordlist.txt --norobot
 
 ### Examples
 
