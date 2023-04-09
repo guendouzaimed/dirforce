@@ -1,7 +1,7 @@
 # **dirforce**
 <center>
     
-[![dirforce.png](https://i.postimg.cc/RFpZFjVJ/dirforce.png)](https://postimg.cc/8JWSXXvT)
+<img src="https://i.postimg.cc/RFpZFjVJ/dirforce.png">
     
 </center>
 
