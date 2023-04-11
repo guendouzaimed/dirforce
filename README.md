@@ -20,4 +20,12 @@ This is a fast and simple command-line tool written in C++ that allows you to se
     - [import-request-from-a-file](https://guendouzaimed.github.io/dirforce/#import-request-from-a-file)
     - [add-suffixe-and-prefixe](https://guendouzaimed.github.io/dirforce/#add-suffixe-and-prefixe)
     - [thread](https://guendouzaimed.github.io/dirforce/#thread)
+    - [](https://guendouzaimed.github.io/dirforce/#output-a-header-value)
+    - [](https://guendouzaimed.github.io/dirforce/#add-an-extension-for-every-word-in-the-wordlist)
+    - [](https://guendouzaimed.github.io/dirforce/#filter)
+    - [](https://guendouzaimed.github.io/dirforce/#lite-mode)
+    - [](https://guendouzaimed.github.io/dirforce/#robotstxt-file)
+    - [](https://guendouzaimed.github.io/dirforce/#examples)
+    - [](https://guendouzaimed.github.io/dirforce/#compiling)
+    - [](https://guendouzaimed.github.io/dirforce/#conclusion)
 
