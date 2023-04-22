@@ -1,0 +1,231 @@
+<html lang="en-US"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>dirforce | dirforce is a tool for directory discovery</title>
+<meta name="generator" content="Jekyll v3.9.3">
+<meta property="og:title" content="dirforce">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="dirforce is a tool for directory discovery">
+<meta property="og:description" content="dirforce is a tool for directory discovery">
+<link rel="canonical" href="https://guendouzaimed.github.io/dirforce/">
+<meta property="og:url" content="https://guendouzaimed.github.io/dirforce/">
+<meta property="og:site_name" content="dirforce">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="dirforce">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"dirforce is a tool for directory discovery","headline":"dirforce","name":"dirforce","url":"https://guendouzaimed.github.io/dirforce/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <style class="anchorjs"></style><link rel="stylesheet" href="/dirforce/assets/css/style.css?v=3511bf3e248db895b0ef346f210a072b21051610">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/dirforce/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://guendouzaimed.github.io/dirforce/">dirforce</a></h1>
+      
+
+      
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-NK9KNRLF1B"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NK9KNRLF1B');
+</script>
+
+<p><a href="https://guendouzaimed.github.io/dirforce/changelog/" style="position: absolute;top: 7px;right: 15px;">changelog</a></p>
+<center>
+    
+<img src="https://i.postimg.cc/RFpZFjVJ/dirforce.png">
+    
+</center>
+
+<h2 id="website-directory-finder-tool">Website Directory Finder Tool<a class="anchorjs-link " href="#website-directory-finder-tool" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h2>
+
+<p>This is a fast command-line tool written in C++ that allows you to search for directories on a website. The tool takes in a URL and outputs a list of all the directories that exist on the website. The tool’s performance is optimized thanks to its implementation in C++, making it an efficient solution for locating directories on a website.</p>
+
+<h3 id="requirements">Requirements<a class="anchorjs-link " href="#requirements" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A computer running Linux.
+A working internet connection.
+</code></pre></div></div>
+
+<h3 id="installation">Installation<a class="anchorjs-link " href="#installation" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/guendouzaimed/dirforce.git
+</code></pre></div></div>
+
+<p>change working directory to dirforce</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd dirforce
+bash setup.sh
+</code></pre></div></div>
+
+<h3 id="usage">Usage<a class="anchorjs-link " href="#usage" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>To use the dirforce Tool after installation you can run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u/--url [url] -w/--wordlist [wordlist.txt]
+</code></pre></div></div>
+
+<p>The url argument is the website you want to search for directories.</p>
+<h3 id="options">Options<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-u or -host: Specifies the host (required).
+-w or -wordlist: Specifies the wordlist (required).
+-t or -thread: Specifies the number of threads to create.
+-m or -method: Specifies the HTTP method.
+-r or -request: Specifies to import the request from a file.
+-s or -suffixe: Adds a string at the beginning of every path in the wordlist.
+-p or -preffixe: Adds a string at the end of every path in the wordlist.
+--custom-header-o: Outputs a specific header value.
+-e or -extension: Adds an extension after each word in the wordlist (e.g., -e php,html will send requests to word, word.php, and word.html).
+-f or -filter: Hides responses that contain the specified string.
+--lite: Outputs in lite mode (complete URL, no color, no logo).
+--norobot: Disables the use of the robots.txt file.
+</code></pre></div></div>
+
+<h3 id="choose-http-method">choose http method<a class="anchorjs-link " href="#choose-http-method" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com -w wordlist.txt -m METHOD
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com -w wordlist.txt -m GET
+</code></pre></div></div>
+
+<p>note that the default method is HEAD which reveal only the header</p>
+
+<h3 id="import-request-from-a-file">import request from a file<a class="anchorjs-link " href="#import-request-from-a-file" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>to import request from file you need to create a file containing the request as following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD PATH HTTP/1.1
+Host: HOSTNAME
+Connection: keep-alive
+</code></pre></div></div>
+
+<p>and then you can add your custom header like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HEAD PATH HTTP/1.1
+Host: HOSTNAME
+Connection: keep-alive
+User-Agent: Mozilla/5.0
+</code></pre></div></div>
+
+<p>to run the tool:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt -r requestFile.txt
+</code></pre></div></div>
+
+<h3 id="add-suffixe-and-prefixe">add suffixe and prefixe<a class="anchorjs-link " href="#add-suffixe-and-prefixe" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>for suffixe:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt -s suffixe
+</code></pre></div></div>
+
+<p>for prefixe:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt -p preffixe
+</code></pre></div></div>
+
+<h3 id="thread">thread<a class="anchorjs-link " href="#thread" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>number of thread is the number of process running in the same time and each process send multiple request to the server, so the more threads you use, the faster dirforce will run.</p>
+
+<p>to specify the number of thread use -t or –thread:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt -t number_of_thread
+</code></pre></div></div>
+
+<h3 id="output-a-header-value">output a header value<a class="anchorjs-link " href="#output-a-header-value" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>to output a header value you can specify it with –custom-header-o , example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt --custom-header-o Content-Type
+</code></pre></div></div>
+
+<h3 id="add-an-extension-for-every-word-in-the-wordlist">add an extension for every word in the wordlist<a class="anchorjs-link " href="#add-an-extension-for-every-word-in-the-wordlist" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>you can do it with -e or –extension, example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt -e php,html,js
+</code></pre></div></div>
+
+<p>make sure to separate the extensions with “,” and do not include space</p>
+
+<h3 id="filter">Filter<a class="anchorjs-link " href="#filter" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>you can filter the output from response that include a specific term like “Content-Length: 0” with -f or –filter</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt --filter "Content-Length: 0"
+</code></pre></div></div>
+
+<h3 id="lite-mode">lite mode<a class="anchorjs-link " href="#lite-mode" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>lite mode is an output option that:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>output complete url
+no color
+no logo
+</code></pre></div></div>
+
+<p>to use lite mode use –lite example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com/ -w wordlist.txt --lite
+</code></pre></div></div>
+
+<h3 id="robotstxt-file">robots.txt file<a class="anchorjs-link " href="#robotstxt-file" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+<p>by default the robots.txt file is used to find path you disable this option by using –norobot</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    dirforce -u https://www.example.com/ -w wordlist.txt --norobot
+</code></pre></div></div>
+
+<h3 id="examples">Examples<a class="anchorjs-link " href="#examples" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>Search for directories on the website https://www.example.com:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com -w wordlist.txt
+</code></pre></div></div>
+
+<p>Search for directories on the website https://www.example.com with 100 thread:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com -w wordlist.txt -t 100
+</code></pre></div></div>
+
+<p>Search for directories on the website https://www.example.com with POST method:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dirforce -u https://www.example.com -w wordlist.txt -t 100
+</code></pre></div></div>
+
+<h3 id="compiling">Compiling<a class="anchorjs-link " href="#compiling" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>follow the following steps if you want to compile the tool from source code.</p>
+
+<p>before you compile the source code make sure to have openssl and libcurl installed</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ -I/usr/local/ssl/include dirforce.cpp -o dirforce -L/usr/local/ssl/lib -lssl -lcrypto -lcurl
+</code></pre></div></div>
+
+<h3 id="conclusion">Conclusion<a class="anchorjs-link " href="#conclusion" aria-label="Anchor" data-anchorjs-icon="" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+
+<p>This Website Directory Discovery Tool provides a quick and efficient way to search for directories on a website. With its fast performance due to its implementation in C++, you can quickly and easily locate the directories you need. Its simple command-line interface makes it a convenient solution for reconnaissance you need in no time.</p>
+
+<p>note: use this tool only for ethical purposes.</p>
+
+  
+
+</body></html>
