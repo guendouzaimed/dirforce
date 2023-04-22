@@ -1,3 +1,14 @@
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NK9KNRLF1B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NK9KNRLF1B');
+</script>
+
 # **dirforce**
 <a href="https://guendouzaimed.github.io/dirforce/changelog/" style="position: absolute;top: 7px;right: 7px;">changelog</a>
 <center>
