@@ -9,8 +9,8 @@
   gtag('config', 'G-NK9KNRLF1B');
 </script>
 
-# **dirforce**
-<a href="https://guendouzaimed.github.io/dirforce/changelog/" style="position: absolute;top: 7px;right: 7px;">changelog</a>
+
+<a href="https://guendouzaimed.github.io/dirforce/changelog/" style="position: absolute;top: 7px;right: 15px;">changelog</a>
 <center>
     
 <img src="https://i.postimg.cc/RFpZFjVJ/dirforce.png">
